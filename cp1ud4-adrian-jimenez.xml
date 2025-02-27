@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Para la creación de este documento XML definimos una DTD en la que le decimos que
+el elemento raíz es catalogo y que está compuesto de elementos "libro" los cuales
+están vacíos (solo tienen atributos). Luego en los atributos del libro les decimos
+que son de tipo texto (CDATA) y que son obligatorios (#REQUIRED) -->
+
+<!DOCTYPE catalogo [
+  <!ELEMENT catalogo (libro+)>
+  <!ELEMENT libro EMPTY>
+  <!ATTLIST libro
+    titulo CDATA #REQUIRED
+    autor CDATA #REQUIRED
+    ano_publicacion CDATA #REQUIRED
+    editorial CDATA #REQUIRED
+    resumen CDATA #REQUIRED
+  >
+]>
+<catalogo>
+  <libro 
+    titulo="Cien años de soledad"
+    autor="Gabriel García Márquez"
+    ano_publicacion="1967"
+    editorial="Sudamericana"
+    resumen="Narra la historia de la familia Buendía en Macondo." />
+
+  <libro
+    titulo="1984"
+    autor="Goerge Orwell"
+    ano_publicacion="1949"
+    editorial="Secker &amp; Warburg"
+    resumen="Distopía que nos presenta un mundo controlado por la guerra y la vigilancia exhaustiva." />
+  
+
+  <libro
+    titulo="El señor de los anillos"
+    autor="JRR Tolkien"
+    ano_publicacion="1954"
+    editorial="Allen &amp; Unwin"
+    resumen="La lucha épica entre el 'bien' y el 'mal' en la Tierra Media del universo tolienano." />
+  
+</catalogo>
